@@ -248,6 +248,7 @@ abstract class Benchmark(private val conf: BenchmarkConf) {
     try {
       if (scheme.equals("s3")) s"aws s3 cp $localPath $sanitizedTargetPath/" !
       else if (scheme.equals("gs")) s"gsutil cp $localPath $sanitizedTargetPath/" !
+      else if (scheme.equals("hdfs")) s"hadoop fs -put $localPath $sanitizedTargetPath/" !
       else throw new IllegalArgumentException(String.format("Unsupported scheme %s.", scheme))
 
       println(s"FILE UPLOAD: Uploaded $localPath to $sanitizedTargetPath")
