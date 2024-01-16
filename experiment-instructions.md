@@ -2,6 +2,7 @@
 # Running This Benchmark Yourself
 
 ## Overview
+
 This is a basic framework for writing benchmarks to measure Delta's performance. It is currently designed to run benchmark on Spark running in an EMR or a Dataproc cluster. However, it can be easily extended for other Spark-based benchmarks. To get started, first download/clone this repository in your local machine. Then you have to set up a cluster and run the benchmark scripts in this directory. See the next section for more details.
 
 ## Running TPC-DS benchmark
@@ -11,6 +12,35 @@ This TPC-DS benchmark is constructed such that you have to run the following two
 2. *Query data*: Then, using the tables definitions in the Hive Metatore, you can run the 99 benchmark queries.   
 
 The next section will provide the detailed steps of how to setup the necessary Hive Metastore and a cluster, how to test the setup with small-scale data, and then finally run the full scale benchmark.
+
+### Configure cluster with the U-M Great Lakes
+
+#### Create nodes
+`salloc.sh`
+
+A file to acquire nodes on the cluster. 
+
+#### Preparations
+
+`reset.sh`
+
+A file to reset all the settings to ensure that no relevant processes is running upon start. 
+
+`config.sh`
+
+A file to acquire the current ip address of the nodes and set the config files in Hadoop, Spark, etc...
+
+`initialize.sh`
+
+A file to start the services for the benchmark. 
+
+`set_mysql.txt`
+
+A file containing the commands to reset mysql password to ```111```. 
+
+`start_hive.sh`
+
+A file to start the hive services for the benchmark. 
 
 ### Configure cluster with Amazon Web Services
 

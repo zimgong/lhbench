@@ -321,6 +321,10 @@ class HudiBenchmarkSpec(BenchmarkSpec):
           "spark.sql.extensions=org.apache.spark.sql.hudi.HoodieSparkSessionExtension",
           "spark.sql.catalog.spark_catalog=org.apache.spark.sql.hudi.catalog.HoodieCatalog",
           "spark.sql.catalog.hudi=org.apache.spark.sql.hudi.catalog.HoodieCatalog",
+          'spark.hadoop.spark.sql.legacy.parquet.nanosAsLong=false',
+          'spark.hadoop.spark.sql.parquet.binaryAsString=false',
+          'spark.hadoop.spark.sql.parquet.int96AsTimestamp=true',
+          'spark.hadoop.spark.sql.caseSensitive=false'
         ]
         super().__init__(
             format_name="hudi",

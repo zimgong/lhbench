@@ -22,7 +22,7 @@ from scripts.benchmarks import *
 spark_version = "3.3.0"
 delta_version = "2.2.0"
 iceberg_version = "1.1.0"
-hudi_version = "0.12.0"
+hudi_version = "0.13.0"
 
 # Benchmark name to their specifications. See the imported benchmarks.py for details of benchmark.
 

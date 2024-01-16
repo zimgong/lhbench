@@ -1,0 +1,4 @@
+ALTER USER 'root'@'localhost' IDENTIFIED BY '111';
+update mysql.user set host='%' where user='root';
+FLUSH PRIVILEGES;
+EXIT;
