@@ -1,0 +1,6 @@
+delta tpcds 1gb
+iceberg tpcds 1gb
+hudi tpcds 1gb
+delta count 1k
+delta refresh cow 1 1
+delta merge cow 1 1 0.001
